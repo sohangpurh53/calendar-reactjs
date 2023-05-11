@@ -1,5 +1,6 @@
-.calendar-container {
+/* .calendar-container {
   margin-top: 150px;
+  
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,6 +13,7 @@ h2 {
 
 table {
   border-collapse: collapse;
+
 }
 
 td, th {
@@ -49,4 +51,118 @@ button {
 
 button:hover {
   background-color: #eee;
+} */ */
+
+.calendar-container {
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 20px;
+}
+
+/* Calendar table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Calendar table header */
+th {
+  padding: 10px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #5f6368;
+  border-bottom: 1px solid #dadce0;
+}
+
+/* Calendar table cells */
+td {
+  position: relative;
+  height: 80px;
+  text-align: right;
+  padding: 10px;
+  font-size: 1rem;
+  color: #202124;
+  vertical-align: top;
+  border: 1px solid #dadce0;
+}
+
+/* Calendar table cells span */
+td > span {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 1.2rem;
+}
+
+/* Calendar table cells events */
+td > ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Calendar table cells add event input */
+td > input {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 5px;
+  font-size: 0.8rem;
+  border: none;
+  border-top: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Today cell highlight */
+.today {
+  background-color: #f2f2f2;
+  border-color: #dadce0;
+}
+
+/* Clear events button */
+button {
+  display: inline-block;
+  margin: 10px 5px 0 0;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  background-color: #4285f4;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Button container */
+.button-container {
+  margin-top: 20px;
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+  /* Reduce font sizes */
+  th,
+  td {
+    font-size: 0.8rem;
+  }
+
+  /* Make cells a square */
+  td {
+    height: 70px;
+  }
+
+  /* Center text in cells */
+  td > span,
+  td > ul {
+    text-align: center;
+  }
+
+  /* Add event input */
+  td > input {
+    font-size: 0.6rem;
+  }
 }
