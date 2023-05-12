@@ -90,6 +90,13 @@ function Calendar() {
           {calendarRows}
         </tbody>
       </table>
+      
+        {events.map((event, index) => (
+          <li key={`event-${index}`}>
+            <strong>{event.title.toLocaleString()}</strong> <strong>{event.date.toLocaleDateString()} </strong>
+          </li>
+        ))}
+      
       <div className="button-container">
         <button onClick={() => setDate(new Date(date.getFullYear(), date.getMonth() - 1))}>
           Prev Month
@@ -101,55 +108,10 @@ function Calendar() {
           Clear Events
         </button>
       </div>
+    
     </div>
   );
 }
 
 export default Calendar;
 
-
-
-
-
-// const CalendarApp = () => {
-//   // const date = new Date()
-//   // const monthName = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-//   // const daysInMonth = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate()
-//   // const week = []
-//   // const weekname  = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
-//   // const days = [];
-
-//   // for (let i = 1; i <= 7; i++) {
-//   //   week.push(weekname);
-//   // }
-//   // console.log(week)
-//   // for (let i = 1; i <= daysInMonth; i++) {
-//   //   days.push(i);
-//   // }
-
-
-  
-//   return (
-//     <>
-// <div class="calendar">
-//   <div class="header">
-//     <button class="prev-btn">&lt;</button>
-//     <div class="current-month"></div>
-//     <button class="next-btn">&gt;</button>
-//   </div>
-//   <div class="weekdays">
-//     <div>Sun</div>
-//     <div>Mon</div>
-//     <div>Tue</div>
-//     <div>Wed</div>
-//     <div>Thu</div>
-//     <div>Fri</div>
-//     <div>Sat</div>
-//   </div>
-//   <div class="days"></div>
-// </div>
-//     </>
-//   )
-// }
-
-// export default CalendarApp;
